@@ -1,0 +1,79 @@
+dom
+
+document is also an object
+
+eg: document.body.innerHtml ='hello' displays hello in body
+
+accessing body property of document object and innerHtml of body object
+
+- to change the title property document.title="gj" 
+
+- Properites and methods of Document object
+
+- we can have html inside JS 
+so DOM combines html and js together and gives control of webpage
+- doc.body.innerHtml gives html code inside the body element
+
+
+- also can include html code doc.body.innerHtml="<but> hi </button>
+
+-document.querySelector('button') can retierve any element from page and put it inside JS
+-document.querySelector('button').innerHtml will give value of that element
+-if want to select particular button with class document.querySelector('.class').innerHtml
+
+-click - event
+- onclick - eventlisteners
+- on clicking key use this code
+
+onkeydown="
+
+if(event.key=='enter') calculatetotal//
+
+window.alert
+window.document
+window.console
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+
+Array
+
+ const a= [1 , 'hello' , true . { name : 's'} , [1.2]]
+typeof [1,2] is object
+Aa.isArray([1,2]) - true
+
+a.length
+a.push(100) add 100 to array
+a.splice(0,1) - remove 0 th position 1 value
+
+array1= x;
+array2=array1;
+if u change array2 array1 will alsoo change
+so use array2=array1.slice();
+
+-------
+advanced function
+
+-in js functions are values
+- we can create anynomoys function
+
+let a=function(){
+}
+a();
+
+-hoisting lets us write the function in any order like call before declaration
+a JavaScript mechanism where variable and function declarations are put into memory during the compile phase. This
+
+const a={
+name=1;
+fun: function(){};
+}
+a.fun();
+
+--------
+async code
+- like set timeout they will be placed in queue and run remaining code will run and then set timeout
+
+synchronous code
+- one line after another

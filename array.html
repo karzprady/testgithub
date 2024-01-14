@@ -1,0 +1,59 @@
+<body><p> To do list</p>
+    <div class="f">
+<div><input type="text" placeholder="to do list" class="name"></div><div><input type="date" class="date" ></div><div><button onclick="addElement();">ADD</button></div>  </div> 
+<div class="display"></div>
+</body>
+<script>
+let a=[];
+let b=[];
+let s='';
+
+function addElement(){
+    
+a.push(document.querySelector('.name').value);
+b.push(document.querySelector('.date').value);
+
+
+
+
+display();
+}
+
+//onclick="a.splice(${i},1); b.splice(${i},1); display();"
+function display(){
+    s='';
+    for(i=0;i<a.length;i++) s+=`<div class="out" ><div>${a[i]}</div>  `+ ` <div> ${b[i]} </div> <div> <button class="del"  >delete</button></div> </div>`;
+
+document.querySelector('.display').innerHTML=s;
+document.querySelectorAll('.del').forEach((button,index)=>{
+    console.log(button,index);
+    button.addEventListener('click',()=>{
+    a.splice(index,1);
+    b.splice(index,1);
+    display();});});
+}
+
+ let [c,d]=[1,2,3];
+ console.log(c,d);
+
+ let a1=function(){
+    console.log(2);
+ };
+ a1();
+
+ setTimeout(function(){
+
+ },3000);
+
+ setInterval(() => {
+    
+ }, 200); // WILL run function every 3mins
+</script>
+<style>
+
+.f,.out{
+    display: grid;
+    grid-template-columns: 200px 200px 100px;
+}
+
+</style>

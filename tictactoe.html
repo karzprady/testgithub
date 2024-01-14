@@ -1,0 +1,96 @@
+<div class="main">
+    <div class="click">
+        <div>
+        <button class="input"></button>
+        <button class="input"></button>
+        <button class="input"></button>
+    </div>
+    <div>
+        <button class="input"></button>
+        <button class="input"></button>
+        <button class="input"></button>
+    </div>
+    <div>        <button class="input"></button>
+        <button class="input"></button>
+        <button class="input"></button>
+    </div>
+
+    </div>
+
+</div>
+
+<script>
+    let c=0;
+    let h =document.querySelectorAll('.input');
+    console.log(h);
+    let letter='';
+    let winner=[[0, 1, 2],
+  [0, 3, 6],
+  [2, 5, 8],
+  [6, 7, 8],
+  [3, 4, 5],
+  [1, 4, 7],
+  [0, 4, 8],
+  [2, 4, 6]];
+
+    h.forEach(( button,index) =>{ 
+        button.addEventListener('click',()=>{
+     c++;
+     if(c%2!=0) {
+        
+        button.innerText='X';
+    }
+     else {
+        
+        button.innerText='O';
+     }
+     if(c>9) return draw();
+     checkwin(c);
+    })});
+
+    function checkwin(c){
+        for (let i of winner) {
+    let [element1, element2, element3] = [
+      h[i[0]].innerText,
+      h[i[1]].innerText,
+      h[i[2]].innerText,
+    ];
+    //Check if elements are filled
+    //If 3 empty elements are same and would give win as would
+    if (element1 != "" && (element2 != "") & (element3 != "")) {
+      if (element1 == element2 && element2 == element3) {
+        //If all 3 buttons have same values then pass the value to winFunction
+        display(element1);
+      }
+    }
+  }
+        
+    
+    }
+
+    function display(letter){
+        document.querySelector('.click').innerHTML=`${letter} has Won`;
+    
+    }
+
+    function draw(){
+        document.querySelector('.click').innerHTML=`its draw`;
+
+    }
+</script>
+
+<style>
+    .click div button{
+        height: 100px;
+        width: 100px;
+        padding: 20px 20px 20px 20px;
+        
+
+    } 
+    .click div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
